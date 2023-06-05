@@ -3,6 +3,7 @@ package com.example.Agenda_Contactos.controlador;
 import com.example.Agenda_Contactos.entidad.Contacto;
 import com.example.Agenda_Contactos.servicio.ContactoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,11 +22,13 @@ public class ContactoControlador {
     private ContactoServicio contactoServicio;
 
     @GetMapping("/")
-    public String verInicio(Model model){
-        List<Contacto> contactos = contactoServicio.listarTodosLosContactos();
+    public String verInicio(Model model, @Param("palabraClave")String palabraClave){
+        List<Contacto> contactos = contactoServicio.listarTodosLosContactos(palabraClave);
 
         model.addAttribute("contactos", contactos);
-        return "index";
+        model.addAttribute("palabraClave", palabraClave);
+
+        return "resultados";
     }
 
     @GetMapping("/nuevo")

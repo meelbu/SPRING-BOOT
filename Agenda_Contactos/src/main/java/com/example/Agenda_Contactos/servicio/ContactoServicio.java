@@ -8,6 +8,8 @@ public interface ContactoServicio {
 
     public List<Contacto> listarTodosLosContactos();
 
+    List<Contacto> listarTodosLosContactos(String palabraClave);
+
     public  Contacto guardarContacto(Contacto contacto);
 
     public Contacto obtenerContactoPorId(Integer id);

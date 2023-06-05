@@ -12,8 +12,17 @@ public class ImpContactoServicio implements ContactoServicio{
 
     @Autowired
     private ContactoRepositorio repositorio;
+
     @Override
     public List<Contacto> listarTodosLosContactos() {
+        return repositorio.findAll();
+    }
+
+    @Override
+    public List<Contacto> listarTodosLosContactos(String palabraClave) {
+        if (palabraClave!= null){
+            return repositorio.findAll(palabraClave);
+        }
         return repositorio.findAll() ;
     }
 
