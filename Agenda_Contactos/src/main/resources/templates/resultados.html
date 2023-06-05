@@ -24,7 +24,7 @@
 
     <br>
 
-    <h1 style="text-align:center" class="p-3 mb-2 bg-secondary bg-gradient text-black">Lista de contactos</h1>
+    <h1 style="text-align:center" class="p-3 mb-2 bg-secondary bg-gradient text-black">Lista de Contactos</h1>
 
     <div class="text-center my-3">
         <a th:href="@{/nuevo}" class="btn btn-dark"><i class="fas fa-user-plus"></i>&nbsp;Añadir contacto</a>
@@ -34,7 +34,7 @@
 
     <form class="form-inline" th:action="@{/}">
         <div class="form-group mb-2">
-            <label>Filtrar : </label>
+            <label> Filtrar : </label>
         </div>
         <div class="form-group mx-sm-3 mb-2">
             <input type="text" name="palabraClave" class="form-control" id="palabraClave" th:value="${palabraClave}" placeholder="Buscar" required>
@@ -96,7 +96,8 @@
 <script type="text/javascript">
     function limpiarCampos(){
     window.location='/';
-            </script>
+
      }
+</script>
 </body >
 </html>
